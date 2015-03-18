@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Dita-ot-markdown by jelovirt</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Dita-ot-markdown</h1>
+        <p>Markdown parser and output for DITA-OT</p>
+
+        <p class="view"><a href="https://github.com/jelovirt/dita-ot-markdown">View the Project on GitHub <small>jelovirt/dita-ot-markdown</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/jelovirt/dita-ot-markdown/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/jelovirt/dita-ot-markdown/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/jelovirt/dita-ot-markdown">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="markdown-dita-for-dita-ot" class="anchor" href="#markdown-dita-for-dita-ot" aria-hidden="true"><span class="octicon octicon-link"></span></a>Markdown DITA for DITA-OT</h1>
+
+<p>DITA-OT Markdown plug-in contains</p>
+
+<ul>
+<li>  a custom parser for Markdown to allow using
+Markdown DITA as a source document format,</li>
+<li>  and a transtype to generate Markdown from DITA source.</li>
+</ul>
+
+<p>The DITA Markdown files need to use a subset of Markdown constructs for
+compatibility with DITA content models.</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>DITA-OT 2.1 is required. Earlier versions of DITA-OT do not have the
+required extension points.</p>
+
+<h2>
+<a id="build" class="anchor" href="#build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build</h2>
+
+<ol>
+<li>
+<p>Run Gradle distribution task</p>
+
+<div class="highlight highlight-sh"><pre>./gradlew dist</pre></div>
+</li>
+</ol>
+
+<p>Distribution ZIP file is generated under <code>build/distributions</code>.</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<ol>
+<li>
+<p>Run plug-in installation command</p>
+
+<div class="highlight highlight-sh"><pre>dita -install https://github.com/jelovirt/dita-ot-markdown/releases/download/1.0.0/com.elovirta.dita.markdown_1.0.0.zip</pre></div>
+</li>
+</ol>
+
+<p>The <code>dita</code> command line tool requires no additional configuration;
+running DITA-OT using Ant requires adding plug-in contributed JAR files
+to <code>CLASSPATH</code> with e.g. <code>-lib plugins/com.elovirta.dita.markdown</code>.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Markdown DITA topics can only be used by linking to them in map files.</p>
+
+<div class="highlight highlight-xml"><pre>&lt;<span class="pl-ent">map</span>&gt;
+  &lt;<span class="pl-ent">topicref</span> <span class="pl-e">href</span>=<span class="pl-s1"><span class="pl-pds">"</span>test.md<span class="pl-pds">"</span></span> <span class="pl-e">format</span>=<span class="pl-s1"><span class="pl-pds">"</span>markdown<span class="pl-pds">"</span></span>/&gt;
+&lt;/<span class="pl-ent">map</span>&gt;</pre></div>
+
+<p>The <code>format</code> attribute value must be set to <code>markdown</code> in order to
+recognize files as Markdown DITA; file extension is not used to
+recognize format.</p>
+
+<p>To publish Markdown DITA files, use <code>markdown</code> transtype.</p>
+
+<p>See <a href="https://github.com/jelovirt/dita-ot-markdown/wiki/Syntax-reference">Syntax reference</a> for XML and Markdown DITA correspondence.</p>
+
+<h2>
+<a id="donating" class="anchor" href="#donating" aria-hidden="true"><span class="octicon octicon-link"></span></a>Donating</h2>
+
+<p>Support this project and others by <a href="https://github.com/jelovirt">@jelovirt</a> via Gratipay.</p>
+
+<p><a href="https://gratipay.com/jelovirt/"><img src="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png" alt="Support via Gratipay"></a></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>DITA-OT Markdown is licensed for use under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/jelovirt">jelovirt</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
